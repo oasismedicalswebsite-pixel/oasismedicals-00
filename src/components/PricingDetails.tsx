@@ -25,58 +25,58 @@ const PricingDetails = () => {
 
   const pricingData = {
     fever: {
-      title: "Fever Packages",
+      title: "Fever packages",
       icon: Thermometer,
       color: "from-orange-500 to-red-500",
       tests: [
-        { name: "Basic Package (FBC, Malaria Test, WIDAL, Urinalysis)", price: "₦15,000" },
-        { name: "Standard Package (ESR, FBC, Malaria, WIDAL, Stool Microscopy, Urinalysis, Sputum AFB)", price: "₦30,000" }
+        { name: "Know the cause of your reoccurring Fever and Get proper treatment now… It's not always malaria. A proper test will help you understand the root cause and save you from wasting time and money on ineffective treatment. Get tested and discuss the result with a doctor\n\nBasic package includes:\n\t•\tFull Blood Count\n\t•\tMalaria (Thick And Thin Films)\n\t•\tWIDAL (Typhoid Test)\n\t•\tUrinalysis", price: "N15,000:00" },
+        { name: "Standard\n\t•\tErythrocyte Sedimentation Rate\n\t•\tFull Blood Count\n\t•\tMalaria (Thick and Thin Films)\n\t•\tWIDAL (Typhoid Test)\n\t•\tStool Microscopy\n\t•\tUrinalysis\n\t•\tSputum AFB - Tuberculosis test", price: "N30,000:00" }
       ]
     },
     menPackages: {
-      title: "Men's Health Packages",
+      title: "Men Packages",
       icon: Users,
       color: "from-blue-600 to-blue-800",
       tests: [
-        { name: "Full Body Checkup (Opal) - FBS, Total Cholesterol, FBC, Urinalysis, LFT, KFT", price: "₦45,000" },
-        { name: "Full Body Checkup (Ruby) - FBS, Lipid Profile, FBC, PSA, Stool Microscopy, Urinalysis, LFT, KFT", price: "₦80,000" },
-        { name: "Full Body Checkup (Diamond) - Complete comprehensive screening with HbA1C, Lipid Profile, LFT, KFT, CRP, TFT, FBC, PSA, Hepatitis B/C, HIV, Stool tests, Urinalysis", price: "₦180,000" },
-        { name: "Fertility/Hormonal Tests (Basic) - Seminal Fluid Analysis, Semen M/C/S", price: "₦15,000" },
-        { name: "Fertility/Hormonal Tests (Standard) - FSH, LH, Testosterone, Seminal Fluid Analysis, Semen M/C/S", price: "₦60,000" },
-        { name: "Erectile Dysfunction Package - FBS, FSH, LH, Prolactin, Testosterone, Seminal Fluid Analysis, Semen M/C/S", price: "₦100,000" }
+        { name: "Get a clear picture of your health, then take control\nStay in touch with your general health today. Your time, your convenience, your choice.\nAbout Full Body checkup\nOur full Body Checkup packages are comprehensive health screening package designed to provide a detailed overview of your general body health. This package includes a range of tests and diagnostic procedures that assess various aspects of your health, including cardiovascular health, blood sugar levels, kidney and liver function, and more. With this checkup, you can detect early signs of major health issues like diabetes, high cholesterol, hypertension, and other chronic diseases.\n\nFull Body Checkup (Opal)\n\t•\tFull Body Checkup (Opal) plan includes:\n\t•\tFasting Blood Sugar (FBS)\n\t•\tTotal Cholesterol\n\t•\tFull Blood Count\n\t•\tUrinalysis\n\t•\tLiver Function Test \n\t•\tKidney Function Test ", price: "N45,000:00" },
+        { name: "Full Body Checkup (Ruby) Male plan includes:\n\t•\tFasting Blood Sugar (FBS)\n\t•\tLipid Profile \n\t•\tFull Blood Count\n\t•\tTotal Prostate Specific Antigen (Total PSA)\n\t•\tStool Microscopy\n\t•\tUrinalysis\n\t•\tLiver Function Test \n\t•\tKidney Function Test ", price: "N 80,000:00" },
+        { name: "Full Body Checkup (Diamond) Male plan\nThis is a thorough medical examination that assesses various aspects of a person's health. It is designed to provide a comprehensive overview of an individual's overall well-being\nFull Body Checkup (Diamond) plan includes:\n\t•\tFasting Blood Sugar (FBS)\n\t•\tHbA1C (Glycated Heamoglobin)\n\t•\tLipid Profile \n\t•\tLiver Function Test\n\t•\tKidney Function Test \n\t•\tUric Acid\n\t•\t   C-Reactive Protein CRP\n\t•\tThyroid Function Test 1 (Free T3, Free T4, TSH)\n\t•\tFull Blood Count\n\t•\tTotal Prostate Specific Antigen (Total PSA)\n\t•\tHepatitis B Surface Antigen (HBsAg) Rapid\n\t•\tHIV I & II Rapid\n\t•\tHepatitis C Virus Antibody (HCV) Rapid\n\t•\tStool Occult Blood\n\t•\tStool Microscopy\n\t•\tUrinalysis", price: "N180,000:00" },
+        { name: "Fertility/Hormonal Tests (Basic)\nKnow, Track & Understand Your Fertility Status.\nFertility/Hormonal Tests (Basic) plan includes:\n\t•\tSeminal Fluid Analysis\n\t•\tSemen: Microscopy, Culture and Sensitivity", price: "N15,000:00" },
+        { name: "Fertility/Hormonal Tests (Standard)\nDo you have chronic stress due to hormonal imbalances or detect any form of hormonal imbalances\nFertility/Hormonal Tests (Standard) plan includes:\n\t•\tFollicule Stimulating Hormone (FSH)\n\t•\tLH - Luteinizing Hormone\n\t•\tTestosterone (Total)\n\t•\tSeminal Fluid Analysis\n\t•\tSemen: Microscopy, Culture and Sensitivity", price: "N60,000:00" },
+        { name: "Erectile Dysfunction\nErectile Dysfunction is a condition where unable to get an erection or unable to keep an erection for long enough to have sex\nErectile Dysfunction plan includes:\n\t•\tFasting Blood Sugar (FBS)\n\t•\tFollicule Stimulating Hormone (FSH)\n\t•\tLH - Luteinizing Hormone\n\t•\tProlactin\n\t•\tTestosterone (Total)\n\t•\tSeminal Fluid Analysis\n\t•\tSemen: Microscopy, Culture and Sensitivity", price: "N100,000:00" }
       ]
     },
     womenPackages: {
-      title: "Women's Health Packages",
+      title: "Women Packages",
       icon: Heart,
       color: "from-pink-500 to-rose-600",
       tests: [
-        { name: "Full Body Checkup (Opal) - FBS, Total Cholesterol, FBC, Urinalysis, LFT, KFT", price: "₦45,000" },
-        { name: "Full Body Checkup (Ruby) - FBS, Lipid Profile, FBC, Stool Microscopy, Urinalysis, LFT, KFT", price: "₦70,000" },
-        { name: "Full Body Checkup (Diamond) - Complete comprehensive screening with HbA1C, Lipid Profile, LFT, KFT, CRP, TFT, FBC, Hepatitis B/C, HIV, Stool tests, Urinalysis, LBC", price: "₦200,000" },
-        { name: "Fertility/Hormonal Tests (Basic) - Estradiol, FSH, LH, Prolactin", price: "₦40,000" },
-        { name: "Fertility/Hormonal Tests (Standard) - Estradiol, FSH, LH, Progesterone, Prolactin", price: "₦55,000" },
-        { name: "Fertility/Hormonal Tests (Comprehensive) - TSH, Estradiol, FSH, LH, Progesterone, Prolactin, AMH", price: "₦150,000" }
+        { name: "Get a clear picture of your health, then take control\nStay in touch with your general health today. Your time, your convenience, your choice.\nAbout Full Body checkup\nOur full Body Checkup packages are comprehensive health screening package designed to provide a detailed overview of your general body health. This package includes a range of tests and diagnostic procedures that assess various aspects of your health, including cardiovascular health, blood sugar levels, kidney and liver function, and more. With this checkup, you can detect early signs of major health issues like diabetes, high cholesterol, hypertension, and other chronic diseases.\n\nFull Body Checkup (Opal)\nFull Body Checkup (Opal) plan includes:\nFasting Blood Sugar (FBS)\nTotal Cholesterol\nFull Blood Count\nUrinalysis\nLiver Function Test \nKidney Function Test ", price: "N45,000:00" },
+        { name: "Full Body Checkup (Ruby) Female plan includes:\n\t•\tFasting Blood Sugar (FBS)\n\t•\tLipid Profile \n\t•\tFull Blood Count\n\t•\tStool Microscopy\n\t•\tUrinalysis\n\t•\tLiver Function Test \n\t•\tKidney Function Test ", price: "N 70,000:00" },
+        { name: "Full Body Checkup (Diamond) Female plan\nThis is a thorough medical examination that assesses various aspects of a person's health. It is designed to provide a comprehensive overview of an individual's overall well-being\nFull Body Checkup (Diamond) plan includes:\n\t•\tFasting Blood Sugar (FBS)\n\t•\tHbA1C (Glycated Heamoglobin)\n\t•\tLipid Profile \n\t•\tLiver Function Test\n\t•\tKidney Function Test \n\t•\tUric Acid\n\t•\t    C-Reactive Protein CRP\n\t•\tThyroid Function Test 1 (Free T3, Free T4, TSH)\n\t•\tFull Blood Count\n\t•\tHepatitis B Surface Antigen (HBsAg) Rapid\n\t•\tHIV I & II Rapid\n\t•\tHepatitis C Virus Antibody (HCV) Rapid\n\t•\tStool Occult Blood\n\t•\tStool Microscopy\n\t•\tUrinalysis\n\t•\t    Liquid Based Cytology (LBC)", price: "N200,000:00" },
+        { name: "Female fertility/Hormonal Tests Packages\nTrying to get pregnant? Book a female fertility screening test and receive your results in just 48 hours.\nFertility/Hormonal Tests (Basic) Female plan are as follows:\n\t•\tEstradiol\n\t•\tFollicule Stimulating Hormone (FSH)\n\t•\tLH - Luteinizing Hormone\n\t•\tProlactin", price: "N40,000:00" },
+        { name: "Fertility/Hormonal Tests (Standard) female plan are as follows:\n\t•\tEstradiol\n\t•\tFollicule Stimulating Hormone (FSH)\n\t•\tLH - Luteinizing Hormone\n\t•\tProgesterone \n\t•\tProlactin", price: "N55,000:00" },
+        { name: "Fertility/Hormonal Tests (Comprehensive) female plan are as follows:\n\t•\tThyroid-Stimulating Hormone (TSH)\n\t•\tEstradiol\n\t•\tFollicule Stimulating Hormone (FSH)\n\t•\tLH - Luteinizing Hormone\n\t•\tProgesterone \n\t•\tProlactin\n\t•\tAnti Mullerian Hormone (AMH)", price: "N150,000:00" }
       ]
     },
     domesticStaff: {
-      title: "Domestic Staff Screening",
+      title: "DOMESTIC STAFF SCREENING",
       icon: UserCheck,
       color: "from-green-600 to-emerald-600",
       tests: [
-        { name: "Basic Package - PCV, HBsAg, HIV I & II, Pregnancy Test (female), Sputum AFB, Hepatitis A", price: "₦20,000" },
-        { name: "Standard Package - Hb Electrophoresis/Genotype, PCV, HBsAg, HIV I & II, Pregnancy Test (female), HCV, Sputum AFB, Hepatitis A", price: "₦30,000" }
+        { name: "Are you employing the services of stewards, home caregivers, nannies, drivers, cooks, gardeners, etc. Here are some important tests you need to do on them to know more about the health\nBasic\n\t•\t   PCV\n\t•\tHepatitis B Surface Antigen (HBsAg) Rapid\n\t•\tHIV I & II Rapid\n\t•\tBHCG- Qualitative (Pregnancy Test) for female\n\t•\tSputum AFB - Tuberculosis test\n\t•\tHepatitis A Rapid", price: "N20,000:00" },
+        { name: "Standard\n\t•\tHb Electrophoresis/Genotype (Qualitative)\n\t•\tPCV\n\t•\tHepatitis B Surface Antigen (HBsAg) Rapid\n\t•\tHIV I & II Rapid\n\t•\tBHCG- Qualitative (Pregnancy Test) for female\n\t•\tHepatitis C Virus Antibody (HCV) Rapid\n\t•\tSputum AFB - Tuberculosis test\n\t•\tHepatitis A Rapid", price: "N30,000:00" }
       ]
     },
     premarital: {
-      title: "Pre-marital Screening",
+      title: "Pre- marital Screening",
       icon: Heart,
       color: "from-purple-600 to-violet-600",
       tests: [
-        { name: "Basic (Male & Female) - Blood Grouping, Genotype, HBsAg, HIV I & II", price: "₦12,000" },
-        { name: "Standard (Male & Female) - Blood Grouping, Genotype, FBC, HBsAg, HCV, HIV I & II, Pregnancy Test (female)", price: "₦20,000" },
-        { name: "Comprehensive (Female) - Blood Grouping, Genotype, FBC, FSH, LH, Prolactin, Progesterone, HBsAg, HCV, HIV I & II, Pregnancy Test", price: "₦100,000" },
-        { name: "Comprehensive (Male) - Blood Grouping, Genotype, FBC, FSH, LH, Testosterone, HBsAg, HCV, HIV I & II, Seminal Fluid Analysis, Semen M/C/S", price: "₦120,000" }
+        { name: "Pre- marital Test (basic) Male and Female\nOur Pre -Marital basic Tests Package provides a fundamental evaluation of your health to ensure a smooth and worry-free wedding experience. This package includes essential screenings, such as\n\t•\tBlood Grouping (ABO & Rh Typing)\n\t•\tHb Electrophoresis/Genotype (Qualitative)\n\t•\tHepatitis B Surface Antigen (HBsAg) Rapid\n\t•\tHIV I & II Rapid", price: "N12,000:00" },
+        { name: "Pre- marital Test (Standard) Male and Female\nOur Pre- Marital Test (Standard) Tests Package offers essential tests and screenings to ensure your health is in optimal condition before your wedding day.\nPre- marital Test (Standard) Female plan includes:\n\t•\tBlood Grouping (ABO & Rh Typing)\n\t•\tHb Electrophoresis/Genotype (Qualitative)\n\t•\tFull Blood Count\n\t•\tHepatitis B Surface Antigen (HBsAg) Rapid\n\t•\t    Hepatitis C Antibody (HCV) Rapid\n\t•\tHIV I & II Rapid\n\t•\tBHCG- Qualitative (Pregnancy Test)", price: "N20,000:00" },
+        { name: "Pre- marital Test (Comprehensive) Female\nThis comprehensive pre-marital Tests Package is designed to ensure your special day is stress-free and your health is prioritized. This all-inclusive package includes a comprehensive range of tests which includes:\n\t•\t   Blood Grouping (ABO & Rh Typing)\n\t•\tHb Electrophoresis/Genotype (Qualitative)\n\t•\tFull Blood Count\n\t•\tFollicule Stimulating Hormone (FSH)\n\t•\tLH - Luteinizing Hormone\n\t•\tProlactin\n\t•\tProgesterone \n\t•\tHepatitis B Surface Antigen (HBsAg) Rapid\n\t•\t   Hepatitis C Antibody (HCV) Rapid\n\t•\tHIV I & II Rapid\n\t•\tBHCG- Qualitative (Pregnancy Test)", price: "N100,000:00" },
+        { name: "Pre- marital Test (Comprehensive) Male\nThis comprehensive pre-marital Tests Package is designed to ensure your special day is stress-free and your health is prioritized. This all-inclusive package includes a comprehensive range of tests which includes:\n\t•\tBlood Grouping (ABO & Rh Typing)\n\t•\tHb Electrophoresis/Genotype (Qualitative)\n\t•\tFull Blood Count\n\t•\tFollicule Stimulating Hormone (FSH)\n\t•\tLH - Luteinizing Hormone\n\t•\tTestosterone (Total)\n\t•\tHepatitis B Surface Antigen (HBsAg) Rapid\n\t•\t    Hepatitis C Antibody (HCV) Rapid\n\t•\tHIV I & II Rapid\n\t•\tSeminal Fluid Analysis\n\t•\tSemen: Microscopy, Culture and Sensitivity", price: "N120,000:00" }
       ]
     },
     ultrasound: {
