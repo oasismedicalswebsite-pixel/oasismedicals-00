@@ -169,6 +169,16 @@ const BookingForm: React.FC<BookingFormProps> = ({ serviceName, servicePrice }) 
             >
               {isSubmitting ? 'Submitting...' : 'Continue to Payment'}
             </Button>
+            
+            {/* Call-to-notice for sample collection */}
+            <div className="flex items-start space-x-2 p-3 bg-accent/10 rounded-lg border border-accent/20">
+              <div className="flex-shrink-0 mt-0.5">
+                <span className="text-accent">⚠️</span>
+              </div>
+              <p className="text-sm text-muted-foreground italic">
+                Sample collection at home or office attracts an extra charge based on distance. This will be discussed with you before confirmation.
+              </p>
+            </div>
           </form>
         </Form>
       </CardContent>
