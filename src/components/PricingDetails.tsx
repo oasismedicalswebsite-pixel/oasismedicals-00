@@ -128,12 +128,21 @@ const PricingDetails = () => {
       color: "from-green-500 to-emerald-500",
       description: "Our chemical pathology tests analyze blood and body fluids to assess organ function, metabolic processes, and detect diseases. These tests are crucial for monitoring diabetes, kidney function, liver health, and cardiovascular risk factors.",
       tests: [
-        { name: "Diabetes Monitoring Package\n\t•\tFasting blood sugar\n\t•\tRandom blood sugar\n\t•\t2Hr Post-P blood sugar\n\t•\tHbA1c", price: "₦18,000" },
-        { name: "Glucose Tolerance Test", price: "₦10,000" },
-        { name: "Kidney Function Package\n\t•\tE/U/Cr\n\t•\tUrea\n\t•\tCreatinine\n\t•\tFull electrolytes", price: "₦43,000" },
-        { name: "Liver Function Test Package", price: "₦18,000" },
-        { name: "Lipid Profile Package\n\t•\tFull Lipid Profile\n\t•\tTotal Cholesterol", price: "₦23,000" },
-        { name: "Additional Chemistry Tests", price: "CALL" }
+        { name: "Fasting blood sugar", price: "₦2,000" },
+        { name: "Random blood sugar", price: "₦2,000" },
+        { name: "2Hr Post-P blood sugar", price: "₦5,000" },
+        { name: "Glucose tolerance test G.T.T", price: "₦10,000" },
+        { name: "HbA1c", price: "₦10,000" },
+        { name: "E/U/Cr", price: "₦18,000" },
+        { name: "Urea", price: "₦5,000" },
+        { name: "Full electrolytes", price: "₦10,000" },
+        { name: "Creatinine", price: "₦5,000" },
+        { name: "Liver Function Test (LFT)", price: "₦18,000" },
+        { name: "Total Billirubin", price: "₦5,000" },
+        { name: "Direct Billirubin", price: "₦5,000" },
+        { name: "Full Lipid Profile", price: "₦18,000" },
+        { name: "Total Cholesterol", price: "₦5,000" },
+        { name: "For others", price: "CALL" }
       ]
     },
     microbiology: {
@@ -142,15 +151,47 @@ const PricingDetails = () => {
       color: "from-purple-500 to-violet-500",
       description: "Our microbiology and serology services identify infectious diseases, parasites, and immune responses. These tests help diagnose bacterial, viral, and parasitic infections while monitoring your immune system status.",
       tests: [
-        { name: "Stool Analysis Package\n\t•\tSTOOL: Microscopy\n\t•\tSTOOL: M/C/S\n\t•\tSTOOL: Occult Blood", price: "₦15,000" },
-        { name: "Blood Infection Screening\n\t•\tMalaria Parasites\n\t•\tWidal Reaction\n\t•\tV.D.R.L\n\t•\tCulture & Sensitivity", price: "₦18,000" },
-        { name: "Advanced Blood Tests\n\t•\tH.Pylori\n\t•\tTB (Serum)\n\t•\tMicrofilaria\n\t•\tTrypanosome\n\t•\tLeishmania", price: "₦25,000" },
-        { name: "Urine Analysis Package\n\t•\tMicroscopy for Shistosoma oval\n\t•\tUrinalysis\n\t•\tM/C/S", price: "₦12,000" },
-        { name: "Respiratory Analysis\n\t•\tSPUTUM: ZN Stain (A-AFB)\n\t•\tSPUTUM: M/C/S\n\t•\tSPUTUM: GenXpert", price: "₦22,000" },
-        { name: "Reproductive Health Tests\n\t•\tSEMINAL FLUID: Analysis\n\t•\tSEMINAL FLUID: M/C/S", price: "₦25,000" },
-        { name: "Skin & Swab Tests\n\t•\tSKIN: Snips For Microfilaria\n\t•\tSKIN: Fungal Element\n\t•\tSWAB: HVS M/C/S\n\t•\tSWAB: Urethral M/C/S", price: "₦29,000" },
-        { name: "Viral Screening Package\n\t•\tHIV Screening test\n\t•\tHepatitis A, B, C Screening\n\t•\tPregnancy Test (Blood)", price: "₦14,000" },
-        { name: "Hepatitis Profile & Viral Load", price: "CALL" }
+        // STOOL
+        { name: "STOOL: Microscopy", price: "₦3,000" },
+        { name: "STOOL: M/C/S", price: "₦5,000" },
+        { name: "STOOL: Occult Blood", price: "₦7,000" },
+        // BLOOD
+        { name: "BLOOD: Malaria Parasites", price: "₦2,000" },
+        { name: "BLOOD: Widal Reaction", price: "₦2,000" },
+        { name: "BLOOD: V.D.R.L", price: "₦2,000" },
+        { name: "BLOOD: Culture & Sensitivity", price: "₦12,000" },
+        { name: "BLOOD: H.Pylori", price: "₦5,000" },
+        { name: "BLOOD: TB (Serum)", price: "₦5,000" },
+        { name: "BLOOD: Microfilaria", price: "₦5,000" },
+        { name: "BLOOD: Trypanosome", price: "₦5,000" },
+        { name: "BLOOD: Leishmania", price: "₦5,000" },
+        // URINE
+        { name: "URINE: Microscopy for Shistosoma oval", price: "₦3,000" },
+        { name: "URINE: Urinalysis", price: "₦2,000" },
+        { name: "URINE: M/C/S", price: "₦7,000" },
+        // SPUTUM
+        { name: "SPUTUM: ZN Stain (A-AFB) x 1", price: "₦5,000" },
+        { name: "SPUTUM: M/C/S", price: "₦10,000" },
+        { name: "SPUTUM: GenXpert", price: "₦7,000" },
+        // SEMINAL FLUID
+        { name: "SEMINAL FLUID: Analysis", price: "₦10,000" },
+        { name: "SEMINAL FLUID: M/C/S", price: "₦15,000" },
+        // SKIN
+        { name: "SKIN: Snips For Microfilaria", price: "₦5,000" },
+        { name: "SKIN: Fungal Element", price: "₦5,000" },
+        // SWAB
+        { name: "SWAB: HVS M/C/S", price: "₦6,000" },
+        { name: "SWAB: Urethral M/C/S", price: "₦8,000" },
+        { name: "SWAB: OTHERS M/C/S", price: "₦10,000" },
+        // SCREENING TESTS
+        { name: "HIV Screening test", price: "₦4,000" },
+        { name: "Hepatitis 'A' Screening", price: "₦5,000" },
+        { name: "Hepatitis 'B' Screening", price: "₦2,000" },
+        { name: "Hepatitis 'C' Screening", price: "₦3,000" },
+        { name: "Hepatitis Profile", price: "CALL" },
+        { name: "Viral Load", price: "CALL" },
+        // PREGNANCY TEST
+        { name: "PREGNANCY TEST: Blood (for early detection)", price: "₦2,000" }
       ]
     },
     hormonal: {
@@ -159,12 +200,17 @@ const PricingDetails = () => {
       color: "from-medical-magenta to-pink-500",
       description: "Our hormonal testing services evaluate your endocrine system function, fertility status, and hormonal balance. These tests are essential for diagnosing hormonal disorders, fertility issues, and metabolic conditions.",
       tests: [
-        { name: "Male Fertility Profile\n\t•\tFSH\n\t•\tLH\n\t•\tTestosterone\n\t•\tProlactin", price: "₦50,000" },
-        { name: "Female Fertility Profile\n\t•\tFSH\n\t•\tLH\n\t•\tEstrogen (E2)\n\t•\tProgesterone\n\t•\tProlactin", price: "₦50,000" },
-        { name: "Advanced Fertility Testing\n\t•\tAMH (Anti-Müllerian Hormone)", price: "₦40,000" },
-        { name: "Thyroid Function Package\n\t•\tTFT (Complete)\n\t•\tTSH", price: "₦65,000" },
-        { name: "Prostate Health\n\t•\tPSA (Prostate Specific Antigen)", price: "₦10,000" },
-        { name: "Additional Hormonal Tests", price: "CALL" }
+        { name: "Male Infertility/erectile dysfunction (FSH, LH, PRL, Test/Prog, E2)", price: "₦50,000" },
+        { name: "Female Infertility/Hirsutism (FSH, LH, PRL, Test/Prog, E2)", price: "₦50,000" },
+        { name: "FSH", price: "₦10,000" },
+        { name: "LH", price: "₦10,000" },
+        { name: "PROL", price: "₦10,000" },
+        { name: "TEST.", price: "₦10,000" },
+        { name: "PROG", price: "₦10,000" },
+        { name: "E2", price: "₦10,000" },
+        { name: "PSA", price: "₦10,000" },
+        { name: "TFT", price: "₦50,000" },
+        { name: "TSH", price: "₦15,000" }
       ]
     },
     histology: {
@@ -173,11 +219,11 @@ const PricingDetails = () => {
       color: "from-orange-500 to-red-500",
       description: "Our histopathology services examine tissue samples and cells to diagnose diseases, including cancer detection and tissue abnormalities. These detailed microscopic analyses provide crucial diagnostic information.",
       tests: [
-        { name: "Small Tissue Analysis", price: "₦30,000" },
-        { name: "Medium Tissue Analysis", price: "₦35,000" },
-        { name: "Large Tissue Analysis", price: "₦40,000" },
-        { name: "Complex Tissue Analysis", price: "₦45,000" },
-        { name: "Cytology Examination", price: "CALL" }
+        { name: "Histology studies (Small)", price: "₦30,000" },
+        { name: "Histology studies (Medium)", price: "₦35,000" },
+        { name: "Histology studies (Large)", price: "₦40,000" },
+        { name: "Histology studies (Complex)", price: "₦45,000" },
+        { name: "CYTOLOGY", price: "CALL" }
       ]
     },
     ecg: {
@@ -186,8 +232,7 @@ const PricingDetails = () => {
       color: "from-medical-cyan to-blue-600",
       description: "Our ECG services monitor your heart's electrical activity to detect heart rhythm abnormalities, heart attacks, and other cardiac conditions. This non-invasive test is essential for cardiovascular health assessment.",
       tests: [
-        { name: "Resting ECG", price: "₦8,000" },
-        { name: "Exercise Stress Test (Pre & Post Exercise)", price: "₦12,000" }
+        { name: "Pre & Post Exercise", price: "₦12,000" }
       ]
     },
     xray: {
@@ -196,13 +241,41 @@ const PricingDetails = () => {
       color: "from-gray-600 to-slate-700",
       description: "Our advanced digital X-ray imaging services provide detailed radiological reports for accurate diagnosis of bone fractures, lung conditions, and internal abnormalities. All images are reviewed by qualified radiologists.",
       tests: [
-        { name: "Head & Neck Imaging Package\n\t•\tSkull (AP & Lat)\n\t•\tSinuses\n\t•\tMandibles\n\t•\tCervical Spine", price: "₦40,000" },
-        { name: "Chest & Respiratory Package\n\t•\tChest (PA)\n\t•\tChest (AP & Lat)\n\t•\tThoracic Inlet", price: "₦30,000" },
-        { name: "Spine & Back Package\n\t•\tLumbosacral (AP & Lat)\n\t•\tThoracic Spine (AP & Lat)\n\t•\tCervical Spine (with Obliques)", price: "₦45,000" },
-        { name: "Abdominal & Pelvic Package\n\t•\tAbdomen (AP & Lat)\n\t•\tPelvis\n\t•\tHips", price: "₦45,000" },
-        { name: "Upper Limb Package\n\t•\tShoulder joint\n\t•\tArm (Humerus)\n\t•\tElbow Joint\n\t•\tWrist Joint\n\t•\tHands/Fingers", price: "₦50,000" },
-        { name: "Lower Limb Package\n\t•\tKnee (AP & Lat)\n\t•\tLeg (Tibia & fibular)\n\t•\tAnkle Joint\n\t•\tFoot (AP & Oblique)\n\t•\tFemur or Thigh", price: "₦55,000" },
-        { name: "Specialized Imaging\n\t•\tHystero-Salpingogram (HSG)\n\t•\tCustom imaging studies", price: "CALL" }
+        // Head and Neck
+        { name: "HEAD & NECK: Skull (AP & Lat)", price: "₦12,000" },
+        { name: "HEAD & NECK: Skull (All views)", price: "₦15,000" },
+        { name: "HEAD & NECK: Mandibles", price: "₦10,000" },
+        { name: "HEAD & NECK: Mastoids", price: "₦10,000" },
+        { name: "HEAD & NECK: Sinuses", price: "₦10,000" },
+        { name: "HEAD & NECK: Post Nasal Space", price: "₦10,000" },
+        { name: "HEAD & NECK: Cervical Spine (AP & lat)", price: "₦10,000" },
+        { name: "HEAD & NECK: Cervical Spine (with Obliges)", price: "₦10,000" },
+        // Trunk
+        { name: "TRUNK: Chest (PA)", price: "₦10,000" },
+        { name: "TRUNK: Chest (AP & Lat)", price: "₦12,000" },
+        { name: "TRUNK: Thoracic Inlet", price: "₦12,000" },
+        { name: "TRUNK: Clavicle", price: "₦10,000" },
+        { name: "TRUNK: Abdomen (AP & Lat)", price: "₦15,000" },
+        { name: "TRUNK: Pelvis", price: "₦15,000" },
+        { name: "TRUNK: Hips", price: "₦15,000" },
+        { name: "TRUNK: Lumbosacral (AP & Lat)", price: "₦15,000" },
+        { name: "TRUNK: Thoracic Spine (AP & Lat)", price: "₦15,000" },
+        { name: "TRUNK: Abdomen for missing ICUD", price: "₦15,000" },
+        // Upper and Lower Limbs
+        { name: "LIMBS: Shoulder joint (AP & lat)", price: "₦10,000" },
+        { name: "LIMBS: Arm (Humerus) (AP & Lat)", price: "₦10,000" },
+        { name: "LIMBS: Elbow Joint (AP & lat)", price: "₦10,000" },
+        { name: "LIMBS: Forearm (Radius & Ulna)", price: "₦10,000" },
+        { name: "LIMBS: Wrist Joint", price: "₦10,000" },
+        { name: "LIMBS: Hands/Fingers & Palm", price: "₦10,000" },
+        { name: "LIMBS: Knee (AP & Lat)", price: "₦10,000" },
+        { name: "LIMBS: Leg (Tibia & fibular)(AP & Lat)", price: "₦10,000" },
+        { name: "LIMBS: Ankle Joint", price: "₦10,000" },
+        { name: "LIMBS: Foot (AP & Oblique)", price: "₦10,000" },
+        { name: "LIMBS: Femur or Thigh (AP & Lat)", price: "₦12,000" },
+        // Special Investigation
+        { name: "SPECIAL: Hystero-Salpingogram (HSG)", price: "CALL" },
+        { name: "OTHERS", price: "CALL" }
       ]
     }
   };
