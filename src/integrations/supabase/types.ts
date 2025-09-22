@@ -21,6 +21,7 @@ export type Database = {
           id: string
           notes: string | null
           payment_id: string | null
+          payment_status: string
           service_name: string
           service_price: number
           status: string
@@ -33,6 +34,7 @@ export type Database = {
           id?: string
           notes?: string | null
           payment_id?: string | null
+          payment_status?: string
           service_name: string
           service_price: number
           status?: string
@@ -45,6 +47,7 @@ export type Database = {
           id?: string
           notes?: string | null
           payment_id?: string | null
+          payment_status?: string
           service_name?: string
           service_price?: number
           status?: string
@@ -65,27 +68,42 @@ export type Database = {
         Row: {
           created_at: string
           description: string | null
+          doctor_notes: string | null
           file_url: string | null
           id: string
           record_type: string
+          results: Json | null
+          status: string
+          test_date: string
+          test_type: string
           updated_at: string
           user_id: string
         }
         Insert: {
           created_at?: string
           description?: string | null
+          doctor_notes?: string | null
           file_url?: string | null
           id?: string
           record_type: string
+          results?: Json | null
+          status?: string
+          test_date?: string
+          test_type?: string
           updated_at?: string
           user_id: string
         }
         Update: {
           created_at?: string
           description?: string | null
+          doctor_notes?: string | null
           file_url?: string | null
           id?: string
           record_type?: string
+          results?: Json | null
+          status?: string
+          test_date?: string
+          test_type?: string
           updated_at?: string
           user_id?: string
         }
@@ -133,7 +151,9 @@ export type Database = {
       profiles: {
         Row: {
           created_at: string
+          date_of_birth: string | null
           first_name: string | null
+          gender: string | null
           id: string
           last_name: string | null
           phone: string | null
@@ -142,7 +162,9 @@ export type Database = {
         }
         Insert: {
           created_at?: string
+          date_of_birth?: string | null
           first_name?: string | null
+          gender?: string | null
           id?: string
           last_name?: string | null
           phone?: string | null
@@ -151,7 +173,9 @@ export type Database = {
         }
         Update: {
           created_at?: string
+          date_of_birth?: string | null
           first_name?: string | null
+          gender?: string | null
           id?: string
           last_name?: string | null
           phone?: string | null
