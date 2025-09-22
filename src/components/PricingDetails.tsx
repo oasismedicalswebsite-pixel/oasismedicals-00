@@ -9,11 +9,7 @@ import PaymentDialog from "./PaymentDialog";
 
 const PricingDetails = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [openCategories, setOpenCategories] = useState<{ [key: string]: boolean }>({
-    ultrasound: true,
-    fever: true,
-    menPackages: true
-  });
+  const [openCategories, setOpenCategories] = useState<{ [key: string]: boolean }>({});
   const [paymentDialog, setPaymentDialog] = useState({ open: false, serviceName: "", servicePrice: 0 });
 
   const toggleCategory = (category: string) => {
