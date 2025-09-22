@@ -87,51 +87,36 @@ const Gallery = () => {
   };
   return <section id="gallery" className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl lg:text-5xl font-bold mb-6">
-            Our <span className="bg-gradient-to-r from-medical-cyan to-medical-magenta bg-clip-text text-transparent">Gallery</span>
-          </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Take a visual tour of our state-of-the-art medical facility and professional services
-          </p>
-
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-8">
-            {categories.map(category => <Button key={category} variant={selectedCategory === category ? "default" : "outline"} onClick={() => setSelectedCategory(category)} className={selectedCategory === category ? "bg-gradient-to-r from-medical-cyan to-medical-magenta text-white" : "hover:bg-primary/10"}>
-                <ImageIcon className="w-4 h-4 mr-2" />
-                {category}
-              </Button>)}
-          </div>
-        </div>
+        
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredImages.map((image, index) => <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
               <div className="relative aspect-square overflow-hidden">
-                <img 
-                  src={image.src} 
-                  alt={image.name} 
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
-                />
+                <img src={image.src} alt={image.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
                 
                 {/* Overlay */}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    onClick={() => handleImageClick(image.src)}
-                    className="bg-white/20 text-white border-white/30 hover:bg-white/30"
-                  >
-                    <Eye className="w-4 h-4" />
-                  </Button>
-                  <Button
-                    size="sm"
-                    variant="secondary"
-                    onClick={() => downloadImage(image.src, image.name)}
-                    className="bg-white/20 text-white border-white/30 hover:bg-white/30"
-                  >
-                    <Download className="w-4 h-4" />
-                  </Button>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <div className="flex justify-between items-end">
+                      <div>
+                        <Badge className="mb-2 bg-white/20 text-white border-white/30">
+                          {image.category}
+                        </Badge>
+                        <h3 className="text-white font-semibold text-sm leading-tight">
+                          {image.name}
+                        </h3>
+                      </div>
+                      <div className="flex gap-2">
+                        <Button size="sm" variant="secondary" onClick={() => handleImageClick(image.src)} className="bg-white/20 text-white border-white/30 hover:bg-white/30">
+                          <Eye className="w-4 h-4" />
+                        </Button>
+                        <Button size="sm" variant="secondary" onClick={() => downloadImage(image.src, image.name)} className="bg-white/20 text-white border-white/30 hover:bg-white/30">
+                          <Download className="w-4 h-4" />
+                        </Button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
               
