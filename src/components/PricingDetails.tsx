@@ -260,6 +260,7 @@ const PricingDetails = () => {
         <div className="space-y-8">
           {Object.entries(filteredCategories).map(([key, category]) => {
             const IconComponent = category.icon;
+            const isOpen = openCategories[key];
             
             return (
               <div key={key} className="space-y-6">
@@ -290,82 +291,117 @@ const PricingDetails = () => {
                   )}
                 </div>
 
-                {/* Package Cards Grid */}
-                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                  {category.tests.map((test, index) => (
-                    <Card key={index} className="border-2 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
-                      <CardContent className="p-6">
-                        {/* Package Name */}
-                        <div className="mb-4">
-                          <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                            {test.name.split('\n')[0]}
-                          </h3>
+                {/* Accordion for Package Details */}
+                <Card className="border-2 hover:border-primary/20 transition-colors">
+                  <Collapsible open={isOpen} onOpenChange={() => toggleCategory(key)}>
+                    <CollapsibleTrigger asChild>
+                      <CardHeader className="cursor-pointer hover:bg-gray-50 transition-colors py-6">
+                        <div className="flex items-center justify-between">
+                          <div className="flex items-center space-x-3">
+                            <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
+                              <IconComponent className="w-5 h-5 text-primary" />
+                            </div>
+                            <div>
+                              <h3 className="text-xl font-semibold text-foreground">
+                                View Available {category.title} Packages
+                              </h3>
+                              <p className="text-sm text-muted-foreground">
+                                Click to see all package options and pricing details
+                              </p>
+                            </div>
+                          </div>
+                          <div className="flex items-center space-x-2">
+                            <span className="text-sm text-muted-foreground hidden sm:block">
+                              {isOpen ? 'Hide' : 'Show'} packages
+                            </span>
+                            <ChevronDown className={`w-6 h-6 text-primary transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
+                          </div>
                         </div>
-                        
-                        {/* Tests Included */}
-                        <div className="mb-6">
-                          <h4 className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">
-                            Tests Included:
-                          </h4>
-                          <div className="space-y-2">
-                            {test.name.split('\n').slice(1).map((line, lineIndex) => {
-                              if (line.trim().startsWith('•') || line.trim().startsWith('\t•')) {
-                                return (
-                                  <div key={lineIndex} className="flex items-start space-x-2">
-                                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2.5 flex-shrink-0"></div>
-                                    <span className="text-sm text-muted-foreground leading-relaxed">
-                                      {line.replace(/^\t*•\t*/, '').trim()}
+                      </CardHeader>
+                    </CollapsibleTrigger>
+                    
+                    <CollapsibleContent>
+                      <CardContent className="pt-0 pb-6">
+                        {/* Package Cards Grid */}
+                        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                          {category.tests.map((test, index) => (
+                            <Card key={index} className="border-2 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
+                              <CardContent className="p-6">
+                                {/* Package Name */}
+                                <div className="mb-4">
+                                  <h4 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                                    {test.name.split('\n')[0]}
+                                  </h4>
+                                </div>
+                                
+                                {/* Tests Included */}
+                                <div className="mb-6">
+                                  <h5 className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">
+                                    Tests Included:
+                                  </h5>
+                                  <div className="space-y-2">
+                                    {test.name.split('\n').slice(1).map((line, lineIndex) => {
+                                      if (line.trim().startsWith('•') || line.trim().startsWith('\t•')) {
+                                        return (
+                                          <div key={lineIndex} className="flex items-start space-x-2">
+                                            <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2.5 flex-shrink-0"></div>
+                                            <span className="text-sm text-muted-foreground leading-relaxed">
+                                              {line.replace(/^\t*•\t*/, '').trim()}
+                                            </span>
+                                          </div>
+                                        );
+                                      }
+                                      return null;
+                                    })}
+                                  </div>
+                                </div>
+                                
+                                {/* Price and Book Button */}
+                                <div className="border-t pt-4 space-y-4">
+                                  <div className="text-center">
+                                    <span className={`text-3xl font-bold ${
+                                      test.price === 'CALL' 
+                                        ? 'text-accent' 
+                                        : 'text-primary'
+                                    }`}>
+                                      {test.price}
                                     </span>
                                   </div>
-                                );
-                              }
-                              return null;
-                            })}
-                          </div>
+                                  <Button 
+                                    onClick={() => handleBookService(test.name, test.price)}
+                                    className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3"
+                                    size="lg"
+                                  >
+                                    {test.price === 'CALL' ? 'Call for Details' : 'Book Now'}
+                                  </Button>
+                                </div>
+                              </CardContent>
+                            </Card>
+                          ))}
                         </div>
-                        
-                        {/* Price and Book Button */}
-                        <div className="border-t pt-4 space-y-4">
-                          <div className="text-center">
-                            <span className={`text-3xl font-bold ${
-                              test.price === 'CALL' 
-                                ? 'text-accent' 
-                                : 'text-primary'
-                            }`}>
-                              {test.price}
-                            </span>
-                          </div>
-                          <Button 
-                            onClick={() => handleBookService(test.name, test.price)}
-                            className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3"
-                            size="lg"
-                          >
-                            {test.price === 'CALL' ? 'Call for Details' : 'Book Now'}
-                          </Button>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
 
-                {/* Contact Section */}
-                <Card className="bg-gradient-to-r from-gray-50 to-white border-2 border-gray-100">
-                  <CardContent className="p-6">
-                    <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
-                      <div className="text-center sm:text-left">
-                        <h4 className="font-semibold text-foreground mb-1">Need help choosing the right package?</h4>
-                        <p className="text-sm text-muted-foreground">Contact us for personalized recommendations and immediate scheduling</p>
-                      </div>
-                      <Button 
-                        onClick={openWhatsApp}
-                        className="bg-gradient-to-r from-medical-cyan to-medical-magenta hover:opacity-90 text-white px-8"
-                        size="lg"
-                      >
-                        <MessageCircle className="w-5 h-5 mr-2" />
-                        Contact Us
-                      </Button>
-                    </div>
-                  </CardContent>
+                        {/* Contact Section */}
+                        <Card className="mt-6 bg-gradient-to-r from-gray-50 to-white border-2 border-gray-100">
+                          <CardContent className="p-6">
+                            <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+                              <div className="text-center sm:text-left">
+                                <h4 className="font-semibold text-foreground mb-1">Need help choosing the right package?</h4>
+                                <p className="text-sm text-muted-foreground">Contact us for personalized recommendations and immediate scheduling</p>
+                              </div>
+                              <Button 
+                                onClick={openWhatsApp}
+                                className="bg-gradient-to-r from-medical-cyan to-medical-magenta hover:opacity-90 text-white px-8"
+                                size="lg"
+                              >
+                                <MessageCircle className="w-5 h-5 mr-2" />
+                                Contact Us
+                              </Button>
+                            </div>
+                          </CardContent>
+                        </Card>
+                      </CardContent>
+                    </CollapsibleContent>
+                  </Collapsible>
                 </Card>
               </div>
             );
