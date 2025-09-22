@@ -30,7 +30,7 @@ const Gallery = () => {
     },
     {
       src: "/lovable-uploads/4d43166a-faad-4a5e-a548-255e51070483.png",
-      name: "Laboratory Technician at Work",
+      name: "Scientist at work",
       category: "Services"
     },
     {
