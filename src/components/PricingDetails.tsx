@@ -107,11 +107,19 @@ const PricingDetails = () => {
       color: "from-red-500 to-pink-500",
       description: "Our comprehensive blood analysis services evaluate your blood cells, clotting function, and related disorders. These tests are essential for diagnosing anemia, bleeding disorders, infections, and blood cancers.",
       tests: [
-        { name: "Full Blood Count Package\n\t•\tAutomated complete blood count analysis", price: "₦7,000" },
-        { name: "Basic Blood Analysis\n\t•\tHaemoglobin (HB)\n\t•\tPack cell volume (PCV)", price: "₦3,500" },
-        { name: "White Blood Cell Analysis\n\t•\tWBC (Total)\n\t•\tWBC (Differential)", price: "₦7,000" },
-        { name: "Clotting Function Tests\n\t•\tBleeding time (BT)\n\t•\tClotting Time\n\t•\tThrombin time (TT)\n\t•\tProthrombin time (PT)", price: "₦30,000" },
-        { name: "Additional Tests\n\t•\tPlatelet Count\n\t•\tE.S.R\n\t•\tHB Genotype\n\t•\tBlood Grouping (ABO & Rh)", price: "₦15,000" }
+        { name: "Full Blood count (Automation)", price: "₦7,000" },
+        { name: "Haemoglobin (HB)", price: "₦2,000" },
+        { name: "Pack cell volume (PCV)", price: "₦2,000" },
+        { name: "WBC (Total)", price: "₦3,000" },
+        { name: "WBC (Differential)", price: "₦4,000" },
+        { name: "Platelet Count", price: "₦5,000" },
+        { name: "E.S.R", price: "₦3,000" },
+        { name: "HB Genotype", price: "₦2,000" },
+        { name: "Bleeding time (BT)", price: "₦5,000" },
+        { name: "Clotting Time", price: "₦5,000" },
+        { name: "Thrombin time (TT)", price: "₦10,000" },
+        { name: "Prothrombin time (PT)", price: "₦10,000" },
+        { name: "Blood Grouping (ABO & Rh)", price: "₦2,000" }
       ]
     },
     chemistry: {
