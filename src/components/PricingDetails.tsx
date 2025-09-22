@@ -257,99 +257,117 @@ const PricingDetails = () => {
           </div>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-8">
           {Object.entries(filteredCategories).map(([key, category]) => {
             const IconComponent = category.icon;
-            const isOpen = openCategories[key];
             
             return (
-              <Card key={key} className="overflow-hidden border-2 hover:border-primary/20 transition-all duration-300">
-                <Collapsible open={isOpen} onOpenChange={() => toggleCategory(key)}>
-                  <CollapsibleTrigger asChild>
-                    <CardHeader className={`cursor-pointer bg-gradient-to-r ${category.color} text-white hover:opacity-90 transition-opacity`}>
-                      <div className="flex items-center justify-between">
-                        <div className="flex items-center space-x-4">
-                          <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center">
-                            <IconComponent className="w-6 h-6" />
-                          </div>
-                          <div className="text-left">
-                            <CardTitle className="text-2xl">{category.title}</CardTitle>
-                            <p className="text-white/80 text-sm">{category.tests.length} tests available</p>
-                          </div>
-                        </div>
-                        <div className="flex items-center space-x-4">
-                          <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
-                            2025 Pricing
-                          </Badge>
-                          <ChevronDown className={`w-6 h-6 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`} />
-                        </div>
+              <div key={key} className="space-y-6">
+                {/* Always visible section with title and description */}
+                <div className={`bg-gradient-to-r ${category.color} p-8 rounded-xl text-white`}>
+                  <div className="flex items-center space-x-4 mb-6">
+                    <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center">
+                      <IconComponent className="w-8 h-8" />
+                    </div>
+                    <div className="flex-1">
+                      <h2 className="text-3xl font-bold mb-2">{category.title}</h2>
+                      <div className="flex items-center space-x-3">
+                        <Badge variant="secondary" className="bg-white/20 text-white border-white/30">
+                          2025 Pricing
+                        </Badge>
+                        <span className="text-white/80 text-sm">{category.tests.length} packages available</span>
                       </div>
-                    </CardHeader>
-                  </CollapsibleTrigger>
+                    </div>
+                  </div>
                   
-                  <CollapsibleContent>
-                    <CardContent className="p-0">
-                      {/* Add description for all packages that have one */}
-                      {(category as any).description && (
-                        <div className="p-6 bg-gray-50 border-b">
-                          <p className="text-muted-foreground leading-relaxed">
-                            {(category as any).description}
-                          </p>
-                          <h3 className="text-lg font-semibold mt-4 text-foreground">Available {category.title} Test Packages:</h3>
+                  {/* Description always visible */}
+                  {(category as any).description && (
+                    <div className="bg-white/10 rounded-lg p-6 backdrop-blur-sm border border-white/20">
+                      <p className="text-white/95 leading-relaxed text-lg">
+                        {(category as any).description}
+                      </p>
+                    </div>
+                  )}
+                </div>
+
+                {/* Package Cards Grid */}
+                <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                  {category.tests.map((test, index) => (
+                    <Card key={index} className="border-2 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
+                      <CardContent className="p-6">
+                        {/* Package Name */}
+                        <div className="mb-4">
+                          <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                            {test.name.split('\n')[0]}
+                          </h3>
                         </div>
-                      )}
-                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
-                         {category.tests.map((test, index) => (
-                           <div 
-                             key={index} 
-                             className="p-4 border-b border-r border-gray-100 hover:bg-gray-50 transition-colors group"
-                           >
-                             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
-                               <div className="flex-1 pr-4">
-                                 <h4 className="font-medium text-foreground group-hover:text-primary transition-colors">
-                                   {test.name}
-                                 </h4>
-                               </div>
-                               <div className="flex items-center gap-3">
-                                 <span className={`font-bold text-lg ${
-                                   test.price === 'CALL' 
-                                     ? 'text-accent' 
-                                     : 'text-primary'
-                                 }`}>
-                                   {test.price}
-                                 </span>
-                                 <Button 
-                                   size="sm" 
-                                   onClick={() => handleBookService(test.name, test.price)}
-                                   className="bg-primary hover:bg-primary/90 text-white"
-                                 >
-                                   {test.price === 'CALL' ? 'Call Now' : 'Book Now'}
-                                 </Button>
-                               </div>
-                             </div>
-                           </div>
-                         ))}
-                      </div>
-                      
-                      <div className="p-6 bg-gradient-to-r from-gray-50 to-white">
-                        <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
-                          <div className="text-center sm:text-left">
-                            <h4 className="font-semibold text-foreground mb-1">Ready to book?</h4>
-                            <p className="text-sm text-muted-foreground">Contact us for immediate scheduling</p>
+                        
+                        {/* Tests Included */}
+                        <div className="mb-6">
+                          <h4 className="text-sm font-semibold text-muted-foreground mb-3 uppercase tracking-wide">
+                            Tests Included:
+                          </h4>
+                          <div className="space-y-2">
+                            {test.name.split('\n').slice(1).map((line, lineIndex) => {
+                              if (line.trim().startsWith('•') || line.trim().startsWith('\t•')) {
+                                return (
+                                  <div key={lineIndex} className="flex items-start space-x-2">
+                                    <div className="w-1.5 h-1.5 bg-primary rounded-full mt-2.5 flex-shrink-0"></div>
+                                    <span className="text-sm text-muted-foreground leading-relaxed">
+                                      {line.replace(/^\t*•\t*/, '').trim()}
+                                    </span>
+                                  </div>
+                                );
+                              }
+                              return null;
+                            })}
+                          </div>
+                        </div>
+                        
+                        {/* Price and Book Button */}
+                        <div className="border-t pt-4 space-y-4">
+                          <div className="text-center">
+                            <span className={`text-3xl font-bold ${
+                              test.price === 'CALL' 
+                                ? 'text-accent' 
+                                : 'text-primary'
+                            }`}>
+                              {test.price}
+                            </span>
                           </div>
                           <Button 
-                            onClick={openWhatsApp}
-                            className="bg-gradient-to-r from-medical-cyan to-medical-magenta hover:opacity-90"
+                            onClick={() => handleBookService(test.name, test.price)}
+                            className="w-full bg-primary hover:bg-primary/90 text-white font-semibold py-3"
+                            size="lg"
                           >
-                            <MessageCircle className="w-4 h-4 mr-2" />
-                            Book {category.title}
+                            {test.price === 'CALL' ? 'Call for Details' : 'Book Now'}
                           </Button>
                         </div>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+
+                {/* Contact Section */}
+                <Card className="bg-gradient-to-r from-gray-50 to-white border-2 border-gray-100">
+                  <CardContent className="p-6">
+                    <div className="flex flex-col sm:flex-row items-center justify-between space-y-4 sm:space-y-0">
+                      <div className="text-center sm:text-left">
+                        <h4 className="font-semibold text-foreground mb-1">Need help choosing the right package?</h4>
+                        <p className="text-sm text-muted-foreground">Contact us for personalized recommendations and immediate scheduling</p>
                       </div>
-                    </CardContent>
-                  </CollapsibleContent>
-                </Collapsible>
-              </Card>
+                      <Button 
+                        onClick={openWhatsApp}
+                        className="bg-gradient-to-r from-medical-cyan to-medical-magenta hover:opacity-90 text-white px-8"
+                        size="lg"
+                      >
+                        <MessageCircle className="w-5 h-5 mr-2" />
+                        Contact Us
+                      </Button>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             );
           })}
         </div>
