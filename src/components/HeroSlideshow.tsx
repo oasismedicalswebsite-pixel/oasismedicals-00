@@ -98,7 +98,7 @@ const HeroSlideshow = () => {
                   <img 
                     src="/lovable-uploads/fc70eb34-882e-4a20-9da3-39a20773fb7c.png" 
                     alt="O.A.S.I.S MEDICALS" 
-                    className="h-28 sm:h-36 md:h-48 lg:h-56 xl:h-64 mx-auto mb-2 sm:mb-4 animate-fade-in hover:animate-premium-spin transition-all duration-300 filter drop-shadow-2xl"
+                    className="h-32 sm:h-40 md:h-56 lg:h-64 xl:h-72 mx-auto mb-2 sm:mb-4 animate-fade-in hover:animate-premium-spin transition-all duration-300 filter drop-shadow-2xl"
                   />
                   <div className="absolute inset-0 rounded-full bg-gradient-to-r from-medical-cyan/20 to-medical-magenta/20 opacity-0 hover:opacity-100 transition-opacity duration-300 animate-premium-glow"></div>
                 </div>
@@ -146,8 +146,8 @@ const HeroSlideshow = () => {
                 <div className="text-xs sm:text-sm text-white/80">Tests Conducted</div>
               </Card>
               <Card className="p-4 sm:p-6 text-center border border-white/20 bg-white/10 backdrop-blur-sm">
-                <div className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">24/7</div>
-                <div className="text-xs sm:text-sm text-white/80">Service Available</div>
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">Available</div>
+                <div className="text-xs sm:text-sm text-white/80">During Working Hours</div>
               </Card>
               <Card className="p-4 sm:p-6 text-center border border-white/20 bg-white/10 backdrop-blur-sm">
                 <div className="text-2xl sm:text-3xl font-bold text-white mb-1 sm:mb-2">100%</div>

@@ -96,7 +96,7 @@ const PricingDetails = () => {
         { name: "Transvaginal Pelvic Scan (TVS)", price: "₦10,000" },
         { name: "Prostate scan (Transrectal)", price: "₦7,000" },
         { name: "Folliculometry", price: "₦30,000" },
-        { name: "Sonohysterosalpigogram (HSG)", price: "₦50,000" },
+        
         { name: "Scrotal Scan", price: "₦7,000" },
         { name: "Specialized Area Scan", price: "CALL" }
       ]
