@@ -108,10 +108,31 @@ const Gallery = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           {filteredImages.map((image, index) => <Card key={index} className="group overflow-hidden hover:shadow-xl transition-all duration-300 border-2 hover:border-primary/20">
               <div className="relative aspect-square overflow-hidden">
-                
+                <img 
+                  src={image.src} 
+                  alt={image.name} 
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" 
+                />
                 
                 {/* Overlay */}
-                
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-2">
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    onClick={() => handleImageClick(image.src)}
+                    className="bg-white/20 text-white border-white/30 hover:bg-white/30"
+                  >
+                    <Eye className="w-4 h-4" />
+                  </Button>
+                  <Button
+                    size="sm"
+                    variant="secondary"
+                    onClick={() => downloadImage(image.src, image.name)}
+                    className="bg-white/20 text-white border-white/30 hover:bg-white/30"
+                  >
+                    <Download className="w-4 h-4" />
+                  </Button>
+                </div>
               </div>
               
               <CardContent className="p-4">
