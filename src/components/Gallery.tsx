@@ -71,7 +71,27 @@ const Gallery = () => {
   };
   return <section id="gallery" className="py-20 bg-secondary/20">
       <div className="container mx-auto px-4">
-        
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-foreground mb-4">Medical Gallery</h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Explore our state-of-the-art medical facility, advanced equipment, and professional healthcare team
+          </p>
+        </div>
+
+        {/* Category Filter */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
+          {categories.map((category) => (
+            <Button
+              key={category}
+              variant={selectedCategory === category ? "default" : "outline"}
+              onClick={() => setSelectedCategory(category)}
+              className="transition-all duration-300"
+            >
+              {category}
+            </Button>
+          ))}
+        </div>
 
         {/* Gallery Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
