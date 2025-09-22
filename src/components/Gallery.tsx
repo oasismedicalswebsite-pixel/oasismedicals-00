@@ -6,17 +6,17 @@ import { useState } from "react";
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const galleryImages = [{
-    src: "/lovable-uploads/clinic-exterior.png",
+    src: "/lovable-uploads/clinic-exterior-new.png",
     name: "Clinic Exterior View",
     category: "Facility"
   }, {
-    src: "/lovable-uploads/waiting-area.png",
+    src: "/lovable-uploads/waiting-area-new.png",
     name: "Waiting Area",
     category: "Facility"
   }, {
-    src: "/lovable-uploads/interior-poster.png",
-    name: "Interior Information Poster",
-    category: "Facility"
+    src: "/lovable-uploads/medical-doctor.jpg",
+    name: "Medical Doctor",
+    category: "Team"
   }, {
     src: "/lovable-uploads/3f2ea8ce-8e6d-4383-9fce-900ffef57f89.png",
     name: "Patient Reception Service",
@@ -53,22 +53,6 @@ const Gallery = () => {
     src: "/lovable-uploads/b37e74d6-ddb5-4e25-ac78-9c8350905184.png",
     name: "Medical Team Photo",
     category: "Team"
-  }, {
-    src: "/lovable-uploads/8047a331-d422-41ec-9a8a-ca357f059dd9.png",
-    name: "Clinical Setup",
-    category: "Services"
-  }, {
-    src: "/lovable-uploads/8960ec25-3a43-493a-8dd2-da5b605beca0.png",
-    name: "Medical Documentation",
-    category: "Services"
-  }, {
-    src: "/lovable-uploads/a8f39a80-491f-4105-ba93-59e1e8e84f10.png",
-    name: "Patient Care Area",
-    category: "Facility"
-  }, {
-    src: "/lovable-uploads/fc70eb34-882e-4a20-9da3-39a20773fb7c.png",
-    name: "Medical Center Interior",
-    category: "Facility"
   }];
   const categories = ["All", ...new Set(galleryImages.map(img => img.category))];
   const [selectedCategory, setSelectedCategory] = useState("All");
