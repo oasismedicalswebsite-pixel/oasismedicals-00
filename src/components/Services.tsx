@@ -2,8 +2,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Heart, TestTube, Activity, X, ArrowRight, Star, Users, Thermometer, UserCheck, Stethoscope } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Services = () => {
+  const navigate = useNavigate();
   const services = [
     {
       icon: Heart,
@@ -79,8 +81,23 @@ const Services = () => {
     }
   ];
 
-  const openWhatsApp = () => {
-    window.open('https://wa.me/2348058135226', '_blank');
+  const handleBookNow = (serviceName: string, priceRange: string) => {
+    // Extract a reasonable base price from the price range for payment
+    let servicePrice = 0;
+    if (priceRange.includes('₦')) {
+      const numbers = priceRange.match(/₦[\d,]+/g);
+      if (numbers && numbers.length > 0) {
+        // Take the first price as the base price
+        servicePrice = parseInt(numbers[0].replace('₦', '').replace(/,/g, ''));
+      }
+    }
+    
+    navigate('/booking', {
+      state: {
+        serviceName,
+        servicePrice: servicePrice || 10000, // Default fallback price
+      },
+    });
   };
 
   return (
@@ -148,7 +165,7 @@ const Services = () => {
                     <div className="text-xs sm:text-sm text-muted-foreground mb-2 sm:mb-3">Starting from</div>
                     <div className="text-base sm:text-lg font-bold text-primary mb-3 sm:mb-4">{service.priceRange}</div>
                     <Button 
-                      onClick={openWhatsApp}
+                      onClick={() => handleBookNow(service.title, service.priceRange)}
                       className="w-full bg-gradient-to-r from-medical-cyan to-medical-magenta hover:opacity-90 text-sm sm:text-base py-2 sm:py-3"
                     >
                       Book Now

@@ -13,6 +13,9 @@ import ContactPage from "./pages/Contact";
 import GalleryPage from "./pages/Gallery";
 import Auth from "./pages/Auth";
 import Dashboard from "./pages/Dashboard";
+import Booking from "./pages/Booking";
+import Payment from "./pages/Payment";
+import PaymentSuccess from "./pages/PaymentSuccess";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -33,6 +36,9 @@ const App = () => (
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/auth" element={<Auth />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/booking" element={<Booking />} />
+          <Route path="/payment" element={<Payment />} />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

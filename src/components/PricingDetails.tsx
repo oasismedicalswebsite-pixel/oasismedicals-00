@@ -5,12 +5,12 @@ import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/component
 import { Input } from "@/components/ui/input";
 import { Heart, TestTube, Activity, X, Search, ChevronDown, MessageCircle, Thermometer, Users, UserCheck, Stethoscope } from "lucide-react";
 import { useState } from "react";
-import PaymentDialog from "./PaymentDialog";
+import { useNavigate } from "react-router-dom";
 
 const PricingDetails = () => {
+  const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState("");
   const [openCategories, setOpenCategories] = useState<{ [key: string]: boolean }>({});
-  const [paymentDialog, setPaymentDialog] = useState({ open: false, serviceName: "", servicePrice: 0 });
 
   const toggleCategory = (category: string) => {
     setOpenCategories(prev => ({
@@ -291,7 +291,13 @@ const PricingDetails = () => {
     }
     // Convert price string like "₦15,000" to number
     const priceNumber = parseInt(priceString.replace(/[₦,]/g, ''));
-    setPaymentDialog({ open: true, serviceName, servicePrice: priceNumber });
+    
+    navigate('/booking', {
+      state: {
+        serviceName: serviceName.split('\n')[0], // Take only the first line as service name
+        servicePrice: priceNumber,
+      },
+    });
   };
 
   // Filter tests based on search term
@@ -512,13 +518,6 @@ const PricingDetails = () => {
           </CardContent>
         </Card>
       </div>
-
-      <PaymentDialog
-        open={paymentDialog.open}
-        onOpenChange={(open) => setPaymentDialog(prev => ({ ...prev, open }))}
-        serviceName={paymentDialog.serviceName}
-        servicePrice={paymentDialog.servicePrice}
-      />
     </section>
   );
 };
