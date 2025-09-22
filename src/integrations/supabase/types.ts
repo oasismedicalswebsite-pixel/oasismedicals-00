@@ -189,7 +189,13 @@ export type Database = {
       [_ in never]: never
     }
     Functions: {
-      [_ in never]: never
+      can_update_booking_status: {
+        Args: {
+          new_record: Database["public"]["Tables"]["bookings"]["Row"]
+          old_record: Database["public"]["Tables"]["bookings"]["Row"]
+        }
+        Returns: boolean
+      }
     }
     Enums: {
       [_ in never]: never
