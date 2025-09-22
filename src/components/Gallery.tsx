@@ -29,39 +29,44 @@ const Gallery = () => {
       category: "Services"
     },
     {
-      src: "/lovable-uploads/4d43166a-faad-4a5e-a548-255e51070483.png",
+      src: "/lovable-uploads/scientist-at-work.png",
       name: "Scientist at work",
+      category: "Services"
+    },
+    {
+      src: "/lovable-uploads/hematology-department.png",
+      name: "Hematology Department",
+      category: "Services"
+    },
+    {
+      src: "/lovable-uploads/microbiology-department.png",
+      name: "Microbiology Department",
+      category: "Services"
+    },
+    {
+      src: "/lovable-uploads/xray-department.png",
+      name: "Radiographer at work/X-ray Department",
+      category: "Services"
+    },
+    {
+      src: "/lovable-uploads/ultrasound-department.jpg",
+      name: "Ultrasound Department",
+      category: "Services"
+    },
+    {
+      src: "/lovable-uploads/chemistry-department-1.jpg",
+      name: "Chemistry Department",
+      category: "Services"
+    },
+    {
+      src: "/lovable-uploads/chemistry-department-2.jpg",
+      name: "Chemistry Department",
       category: "Services"
     },
     {
       src: "/lovable-uploads/b37e74d6-ddb5-4e25-ac78-9c8350905184.png",
       name: "Medical Team Photo",
       category: "Team"
-    },
-    {
-      src: "/lovable-uploads/2cc29c8d-32c8-40e9-bfd5-6f67fc90db01.png",
-      name: "Medical Equipment",
-      category: "Equipment"
-    },
-    {
-      src: "/lovable-uploads/3c23b98d-12a0-41d7-aebe-7888d9e56ebc.png",
-      name: "Diagnostic Equipment",
-      category: "Equipment"
-    },
-    {
-      src: "/lovable-uploads/43b928d8-0380-45af-a37c-f175d89e96b2.png",
-      name: "Laboratory Setup",
-      category: "Equipment"
-    },
-    {
-      src: "/lovable-uploads/4cf12c56-a1eb-44b5-a99a-2518e2e2faa6.png",
-      name: "Medical Instruments",
-      category: "Equipment"
-    },
-    {
-      src: "/lovable-uploads/6012a936-a727-4f53-844d-5db87131386b.png",
-      name: "Testing Equipment",
-      category: "Equipment"
     },
     {
       src: "/lovable-uploads/8047a331-d422-41ec-9a8a-ca357f059dd9.png",
