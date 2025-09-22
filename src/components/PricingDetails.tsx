@@ -28,9 +28,10 @@ const PricingDetails = () => {
       title: "Fever packages",
       icon: Thermometer,
       color: "from-orange-500 to-red-500",
+      description: "Know the cause of your reoccurring Fever and get proper treatment now. It's not always malaria. A proper test will help you understand the root cause and save you from wasting time and money on ineffective treatment. Get tested and discuss the result with a doctor.",
       tests: [
-        { name: "Know the cause of your reoccurring Fever and Get proper treatment now… It's not always malaria. A proper test will help you understand the root cause and save you from wasting time and money on ineffective treatment. Get tested and discuss the result with a doctor\n\nBasic package includes:\n\t•\tFull Blood Count\n\t•\tMalaria (Thick And Thin Films)\n\t•\tWIDAL (Typhoid Test)\n\t•\tUrinalysis", price: "N15,000:00" },
-        { name: "Standard\n\t•\tErythrocyte Sedimentation Rate\n\t•\tFull Blood Count\n\t•\tMalaria (Thick and Thin Films)\n\t•\tWIDAL (Typhoid Test)\n\t•\tStool Microscopy\n\t•\tUrinalysis\n\t•\tSputum AFB - Tuberculosis test", price: "N30,000:00" }
+        { name: "Basic Package\n\t•\tFull Blood Count\n\t•\tMalaria (Thick and Thin Films)\n\t•\tWIDAL (Typhoid Test)\n\t•\tUrinalysis", price: "₦15,000" },
+        { name: "Comprehensive Package\n\t•\tErythrocyte Sedimentation Rate\n\t•\tFull Blood Count\n\t•\tMalaria (Thick and Thin Films)\n\t•\tWIDAL (Typhoid Test)\n\t•\tStool Microscopy\n\t•\tUrinalysis\n\t•\tSputum AFB – Tuberculosis test", price: "₦30,000" }
       ]
     },
     menPackages: {
@@ -350,6 +351,15 @@ const PricingDetails = () => {
                   
                   <CollapsibleContent>
                     <CardContent className="p-0">
+                      {/* Add description for fever packages */}
+                      {key === 'fever' && (category as any).description && (
+                        <div className="p-6 bg-gray-50 border-b">
+                          <p className="text-muted-foreground leading-relaxed">
+                            {(category as any).description}
+                          </p>
+                          <h3 className="text-lg font-semibold mt-4 text-foreground">Available Fever Test Packages:</h3>
+                        </div>
+                      )}
                       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-0">
                          {category.tests.map((test, index) => (
                            <div 
